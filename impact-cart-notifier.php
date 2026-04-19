@@ -3,8 +3,7 @@
  * Plugin Name: Impact Cart Notifier
  * Plugin URI:  https://impact.com
  * Description: Notifies the user when a WooCommerce cart item quantity changes.
- * Version:     1.0.0
- * Author:      Impact Demo
+ * Author:      Harsha
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
