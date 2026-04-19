@@ -123,6 +123,10 @@ Then I would update the cart and see if "event fired" appears. If it does not, t
 
 If the event is firing but the alert is still not showing, I would add a `console.log` inside the comparison logic to check whether the old and new quantities are being tracked correctly and figure out where the comparison is going wrong.
 
+## A note on item removal
+
+Item removal is something I thought about but kept out of scope intentionally. The task asks specifically about quantity changes, and removing an item is technically a deletion, not a quantity change. That said, the plugin handles it gracefully without any extra code. When a user removes an item, WooCommerce fires `updated_cart_totals` but since the remove button does not trigger our `change` event listener, `lastChangedKey` stays null and the plugin exits immediately without showing any alert. So there is no crash, no false alert, just a clean silent return. If I were building this for a real store I would handle removals separately — not with a popup alert since WooCommerce already shows its own removal notice, but with something like a toast notification that auto dismisses after a few seconds. For this assessment I left it as is since it was out of scope and already handled gracefully.
+
 ---
 
 I kept the JS out of the PHP file entirely. No inline script tags anywhere. Everything goes through `wp_enqueue_scripts` because that is the right way to do it in WordPress and it keeps things clean and maintainable.
