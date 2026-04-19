@@ -48,12 +48,26 @@
         var oldQty = previousQuantities[lastChangedKey];
 
         // Only alert if quantity actually changed
+        // if (newQty !== oldQty) {
+        //     var name = impactCartData.cartItems[lastChangedKey]
+        //         ? impactCartData.cartItems[lastChangedKey].name
+        //         : null;
+
+        //     var message = name
+        //         ? 'You just changed the quantity of ' + name + ' to ' + newQty
+        //         : 'You just changed the quantity of this product to ' + newQty;
+
+        //     alert(message);
+        // }
+        
         if (newQty !== oldQty) {
+            var cartItem = impactCartData.cartItems[lastChangedKey];
+            var sku = cartItem && cartItem.sku ? cartItem.sku : null;
             var name = impactCartData.cartItems[lastChangedKey]
                 ? impactCartData.cartItems[lastChangedKey].name
                 : null;
 
-            var message = name
+            var message = sku
                 ? 'You just changed the quantity of ' + name + ' to ' + newQty
                 : 'You just changed the quantity of this product to ' + newQty;
 
