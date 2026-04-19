@@ -10,14 +10,19 @@ I used LocalWP to run this locally. If you want to test it:
 
 1. Download and install LocalWP from https://localwp.com
 2. Import the ZIP I have shared into LocalWP
-3. Start the site and open WP Admin
-4. Login with username `admin` and password `Admin@1234`
-5. Go to Plugins and make sure Impact Cart Notifier is activated
-6. Visit the shop at `http://impact-woo-demo.local/shop`
-7. Add a couple of products to the cart
-8. Go to the cart page at `http://impact-woo-demo.local/cart`
-9. Change a quantity and click Update cart
-10. You should see an alert pop up
+3. Once imported, navigate to the plugin folder inside the site:
+   ```
+   app → public → wp-content → plugins → impact-cart-notifier
+   ```
+4. Replace the `impact-cart-notifier.php` and `impact-cart-notifier.js` files in that folder with the ones from this repository — this ensures you are running the latest version of the code
+5. Start the site and open WP Admin
+6. Login with username `admin` and password `Admin@1234`
+7. Go to Plugins and make sure Impact Cart Notifier is activated
+8. Visit the shop at `http://impact-woo-demo.local/shop`
+9. Add a couple of products to the cart
+10. Go to the cart page at `http://impact-woo-demo.local/cart`
+11. Change a quantity and click Update cart
+12. You should see an alert pop up
 
 The plugin files are here if you want to read through the code:
 
